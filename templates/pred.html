@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ url_for('send_file', filename=img) }}" alt="{{ species }}" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2>Leaf Classification Results</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Common Name:</b> {{ species }}</li>
+                    <li class="list-group-item"><b>Scientific Name:</b> {{ sci_name }}</li>
+                    <li class="list-group-item"><b>Medicinal Properties:</b> {{ medprop }}</li>
+                    <li class="list-group-item"><b>Edible Uses:</b> {{ edibleuses }}</li>
+                    <li class="list-group-item"><b>Composition Details:</b> {{ formatted_data }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

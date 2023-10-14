@@ -1,0 +1,83 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <!-- <div class="jumbotron text-center">
+        <h1 class="display-4">Leaf Classifier</h1>
+        <p class="lead">Upload an image to classify the type of leaf</p>
+    </div>
+
+    <div class="container">
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="fileInput">Choose an image (PNG, JPG, JPEG):</label>
+                <input type="file" class="form-control-file" name="file" accept=".png, .jpg, .jpeg" id="fileInput">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Process</button>
+        </form>
+    </div> -->
+
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Leaf Classifier</h1>
+        <p class="lead">Upload an image to classify the type of leaf</p>
+    </div>
+    
+    <div class="container">
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="fileInput">Choose an image (PNG, JPG, JPEG):</label>
+                <input type="file" class="form-control-file" name="file" accept=".png, .jpg, .jpeg" id="fileInput">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Process</button>
+        </form>
+        
+        <!-- Add a button to open the camera -->
+        <button id="cameraButton" class="btn btn-secondary btn-lg">Take a Photo</button>
+    </div>
+    
+    <script>
+        // Add an event listener to the "Take a Photo" button
+        document.getElementById("cameraButton").addEventListener("click", function () {
+            // Use the MediaDevices API to access the camera
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    // Create a video element to display the camera feed
+                    var video = document.createElement("video");
+                    video.srcObject = stream;
+                    video.autoplay = true;
+                    
+                    // Add the video element to the document
+                    document.body.appendChild(video);
+                    
+                    // When the user clicks the video, capture a photo
+                    video.addEventListener("click", function () {
+                        var canvas = document.createElement("canvas");
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+                        var context = canvas.getContext("2d");
+                        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                        
+                        // Convert the captured image to a data URL
+                        var imageDataURL = canvas.toDataURL("image/jpeg");
+                        
+                        // Create an input field and set its value to the captured image
+                        var input = document.createElement("input");
+                        input.type = "hidden";
+                        input.name = "camera_image";
+                        input.value = imageDataURL;
+                        
+                        // Append the input field to the form
+                        document.querySelector("form").appendChild(input);
+                        
+                        // Stop the camera feed and remove the video element
+                        video.srcObject.getVideoTracks()[0].stop();
+                        video.remove();
+                    });
+                })
+                .catch(function (error) {
+                    console.error("Error accessing the camera: " + error);
+                });
+        });
+    </script>
+    </body>
+    </html>
+{% endblock %}
