@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2>Sorry !!! Couldn't process image</h2>
+        
+            <div >
+                <h3>Below Maybe The Reasons For Not Getting Output</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">The Image You Have Provided May Not Be Clear </li>
+                    <li class="list-group-item">The Species You Are Searching For Doesn't Exist In Our Dataset </li>
+                    
+                </ul>
+                
+            </div>
+            <div >
+                <h3>You May Try Out These Things</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Try To Upload A Clear Picture </li>
+                    <li class="list-group-item">If You Still Face The Above Problem It Indicates That The Class Of Species Doesn't Exits In Our Dataset</li>
+                    
+                </ul>
+                
+
+                <!-- Add a button to go back to the home page -->
+                
+            </div>
+            <a href="{{ url_for('home') }}" class="btn btn-primary">Go Back to Home to upload new image</a>
+        
+    </div>
+{% endblock %}
