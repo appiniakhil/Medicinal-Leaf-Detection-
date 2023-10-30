@@ -32,6 +32,9 @@ app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+
+
+
 # Define class names (plant species)
 class_names = ['Arive-Dantu', 'Basale', 'Betel', 'Crape_Jasmine', 'Curry', 'Drumstick', 'Fenugreek', 'Guava', 'Hibiscus', 'Indian_Beech', 'Indian_Mustard', 'Jackfruit', 'Jamaica_Cherry-Gasagase', 'Jamun', 'Jasmine', 'Karanda', 'Lemon', 'Mango', 'Mexican_Mint', 'Mint', 'Neem', 'Oleander', 'Parijata', 'Peepal', 'Pomegranate', 'Rasna', 'Rose_Apple', 'Roxburgh_fig', 'Sandalwood', 'Tulsi']
 scientific = ['Amaranthus Viridis','Basella Alba','Piper Betle','Tabernaemontana Divaricata','Murraya Koenigii','Moringa Oleifera','Trigonella Foenum-graecum','Psidium Guajava', 'Hibiscus Rosa-sinensis','Pongamia Pinnata','Brassica Juncea','Artocarpus Heterophyllus', 'Muntingia Calabura','Syzygium Cumini','Jasminum', 'Carissa Carandas','Citrus Limon','Mangifera Indica', 'Plectranthus Amboinicus','Mentha','Azadirachta Indica', 'Nerium Oleander','Nyctanthes Arbor-tristis','Ficus Religiosa', 'Punica Granatum','Alpinia Galanga', 'Syzygium Jambos','Ficus Auriculata', 'Santalum Album ','Ocimum Tenuiflorum']
@@ -149,6 +152,7 @@ def pred_image():
         # print(soup)
         tables=soup.find_all('table')
         # print(tables[4])
+
         #composition 
         try:
             composition=list()
@@ -187,6 +191,7 @@ def pred_image():
             formatted_data = comp.get(species, "Details Not Found")
             # if formatted_data == "Details Not Found":
             #     formatted_data == comp[(species)]
+        
         # #medicinal props
         # element = soup.find(class_='boots2')
         # if element:
@@ -203,7 +208,7 @@ def pred_image():
 
         #medicinal props
         #edible uses if available
-
+    
         element = soup.find(class_='boots2')
         try:
             if element:
@@ -245,12 +250,16 @@ def pred_image():
                 medprop=(medicinal_text)
                 medprop = re.sub('\[.*?\]', ' ', medprop)
             # Initialize variables to keep track of h3 tags
+            
+        
+
             # Print the data
             # print(edibleuses)
             
         except:
             print("Error123 ")
         
+
         #edible uses if available
         element2 = soup.find(class_='boots3')
         if element2:
@@ -276,4 +285,4 @@ def send_file(filename):
     return send_from_directory(UPLOAD_FOLDER, filename)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    app.run(host="0.0.0.0", port=8080)
