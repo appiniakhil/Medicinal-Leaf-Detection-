@@ -86,7 +86,7 @@ mypy-extensions==1.0.0
 mysql==0.0.3
 mysql-connector-python==8.0.33
 mysqlclient==2.1.0
-nbclient==0.8.0
+nbclient==0.7.4
 nbconvert==7.9.2
 nbformat==5.9.2
 nest-asyncio==1.5.6
