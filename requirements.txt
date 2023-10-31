@@ -85,7 +85,7 @@ mrcnn==0.2
 mypy-extensions==1.0.0
 mysql==0.0.3
 mysql-connector-python==8.0.33
-mysqlclient==2.2.0
+mysqlclient==2.1.0
 nbclient==0.8.0
 nbconvert==7.9.2
 nbformat==5.9.2
