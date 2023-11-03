@@ -170,7 +170,7 @@ sphinxcontrib-serializinghtml==1.1.5
 stack-data==0.6.2
 streamlit==1.23.1
 streamlit-option-menu==0.3.6
-sympy==1.12
+sympy==1.10.1
 tenacity==8.2.2
 tensorboard==2.14.1
 tensorboard-data-server==0.7.1
