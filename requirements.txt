@@ -209,7 +209,7 @@ websocket-client==1.6.1
 Werkzeug==2.2.3
 widgetsnbextension==4.0.9
 wrapt==1.14.1
-zipp==3.16.2
+zipp==3.15.0
 zope.component==6.0
 zope.deferredimport==5.0
 zope.deprecation==5.0
