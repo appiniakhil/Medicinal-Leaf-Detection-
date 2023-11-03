@@ -137,7 +137,7 @@ pytz==2023.3
 pytz-deprecation-shim==0.1.0.post0
 PyWavelets==1.4.0
 PyYAML==6.0.1
-pyzmq==25.1.0
+pyzmq==5.4.4
 qtconsole==2.4.1
 QtPy==0.8.4
 referencing==0.30.1
