@@ -181,7 +181,7 @@ tensorflow-io-gcs-filesystem==0.31.0
 termcolor==2.3.0
 terminado==0.17.1
 testpath==0.6.0
-tifffile==2023.9.18
+tifffile==2021.11.2
 tinycss2==1.2.1
 toml==0.10.2
 toolz==0.12.0
