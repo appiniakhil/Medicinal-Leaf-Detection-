@@ -187,7 +187,7 @@ toml==0.10.2
 toolz==0.12.0
 torch==1.13.1
 torchaudio==0.13.1
-torchvision==0.15.2
+torchvision==0.14.1
 tornado==6.3.2
 tqdm==4.66.1
 traitlets==5.9.0
